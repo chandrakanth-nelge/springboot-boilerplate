@@ -4,8 +4,8 @@ This spring boot project has covered standard coding practices.
 * Project Documentation. Refer [docs folder](docs)
 
 ## Prerequisites
-* Java 11
-* Eclipse 2019-03
+* Java 8
+* Eclipse 2019-06
 * Eclipse Plugins
     * Sonarlint
     * STS 4
@@ -21,7 +21,7 @@ This spring boot project has covered standard coding practices.
 * flyway: for database migration and versioning
 
 ## Setting up Dev
-1. Clone the repository with SSH - git clone https://github.com/sarvya521/springboot-boilerplate.git
+1. Clone the repository with SSH - git clone https://github.com/chandrakanth-nelge/springboot-boilerplate.git
 2. Import eclipse code formatter - Refer java-code-format.md
 3. Install Lombok, Refer lombok-plugin.md
 
