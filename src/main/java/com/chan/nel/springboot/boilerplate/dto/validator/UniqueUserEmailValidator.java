@@ -1,28 +1,30 @@
 package com.chan.nel.springboot.boilerplate.dto.validator;
 
-import com.backend.boilerplate.dao.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import java.util.Optional;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.chan.nel.springboot.boilerplate.dao.UserRepository;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @Component
 public class UniqueUserEmailValidator implements ConstraintValidator<UniqueField, String> {
 
-    @Autowired
-    private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
-    @SuppressWarnings("squid:S3655")
-    @Override
-    public boolean isValid(String email, ConstraintValidatorContext context) {
-        Optional<Long> longOptional = userRepository.countByEmailIgnoreCase(email);
-        return longOptional.get() == 0;
-    }
+	@SuppressWarnings("squid:S3655")
+	@Override
+	public boolean isValid(String email, ConstraintValidatorContext context) {
+		Optional<Long> longOptional = userRepository.countByEmailIgnoreCase(email);
+		return longOptional.get() == 0;
+	}
 }

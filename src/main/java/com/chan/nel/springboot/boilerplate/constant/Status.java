@@ -1,4 +1,4 @@
-package com.backend.boilerplate.constant;
+package com.chan.nel.springboot.boilerplate.constant;
 
 /**
  * Enum holding all possible status of API

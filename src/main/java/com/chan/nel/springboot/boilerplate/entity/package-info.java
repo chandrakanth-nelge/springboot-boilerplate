@@ -1,1 +1,1 @@
-package com.backend.boilerplate.entity;
+package com.chan.nel.springboot.boilerplate.entity;

@@ -1,19 +1,20 @@
-package com.backend.boilerplate.dao;
-
-import com.backend.boilerplate.entity.UserHistory;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+package com.chan.nel.springboot.boilerplate.dao;
 
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.chan.nel.springboot.boilerplate.entity.UserHistory;
+
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @Repository
 public interface UserHistoryRepository extends JpaRepository<UserHistory, Long> {
 
-    Optional<UserHistory> findByUuid(UUID uuid);
+	Optional<UserHistory> findByUuid(UUID uuid);
 }

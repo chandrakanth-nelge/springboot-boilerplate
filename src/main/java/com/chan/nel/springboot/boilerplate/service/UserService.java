@@ -1,28 +1,28 @@
-package com.backend.boilerplate.service;
-
-import com.backend.boilerplate.dto.CreateUserDto;
-import com.backend.boilerplate.dto.UpdateUserDto;
-import com.backend.boilerplate.dto.UserDto;
-import com.backend.boilerplate.entity.User;
+package com.chan.nel.springboot.boilerplate.service;
 
 import java.util.UUID;
+
+import com.chan.nel.springboot.boilerplate.dto.CreateUserDto;
+import com.chan.nel.springboot.boilerplate.dto.UpdateUserDto;
+import com.chan.nel.springboot.boilerplate.dto.UserDto;
+import com.chan.nel.springboot.boilerplate.entity.User;
 
 /**
  * Bundles all CRUD APIs for User.
  *
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public interface UserService {
 
-    UserDto prepareUserDto(User user);
+	UserDto prepareUserDto(User user);
 
-    UserDto getUserByUuid(UUID uuid);
+	UserDto getUserByUuid(UUID uuid);
 
-    UserDto createUser(CreateUserDto userDto);
+	UserDto createUser(CreateUserDto userDto);
 
-    UserDto updateUser(UpdateUserDto userDto);
+	UserDto updateUser(UpdateUserDto userDto);
 
-    void deleteUser(UUID uuid);
+	void deleteUser(UUID uuid);
 }

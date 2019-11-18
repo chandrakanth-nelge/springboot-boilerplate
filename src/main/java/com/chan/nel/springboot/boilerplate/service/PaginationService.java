@@ -1,15 +1,15 @@
-package com.backend.boilerplate.service;
+package com.chan.nel.springboot.boilerplate.service;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public interface PaginationService<T, P> {
 
-    void setSortingParameters();
+	void setSortingParameters();
 
-    void setDefaultSortParameter();
+	void setDefaultSortParameter();
 
-    P getPageDto(Integer pageNo, Integer pageSize, String sortBy, boolean isAscending);
+	P getPageDto(Integer pageNo, Integer pageSize, String sortBy, boolean isAscending);
 }

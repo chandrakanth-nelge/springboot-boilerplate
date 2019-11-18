@@ -1,26 +1,27 @@
-package com.backend.boilerplate.util;
+package com.chan.nel.springboot.boilerplate.util;
 
-import lombok.Getter;
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+import lombok.Getter;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @Component
 public class ErrorGeneratorInitializer {
 
-    @Getter
-    @Autowired
-    private MessageSource errorMessageSource;
+	@Getter
+	@Autowired
+	private MessageSource errorMessageSource;
 
-    @PostConstruct
-    public void setErrorMessageSource() {
-        ErrorGenerator.setErrorMessageSource(errorMessageSource);
-    }
+	@PostConstruct
+	public void setErrorMessageSource() {
+		ErrorGenerator.setErrorMessageSource(errorMessageSource);
+	}
 }

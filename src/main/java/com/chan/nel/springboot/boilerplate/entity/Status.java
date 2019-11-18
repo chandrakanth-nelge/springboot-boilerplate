@@ -1,11 +1,11 @@
-package com.backend.boilerplate.entity;
+package com.chan.nel.springboot.boilerplate.entity;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @SuppressWarnings("squid:S00115")
 public enum Status {
-    CREATED, UPDATED, DELETED, RECREATED;
+	CREATED, UPDATED, DELETED, RECREATED;
 }

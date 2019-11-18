@@ -1,1 +1,1 @@
-package com.backend.boilerplate.util;
+package com.chan.nel.springboot.boilerplate.util;

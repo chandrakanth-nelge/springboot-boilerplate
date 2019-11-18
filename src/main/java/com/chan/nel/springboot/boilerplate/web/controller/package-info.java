@@ -1,1 +1,1 @@
-package com.backend.boilerplate.web.controller;
+package com.chan.nel.springboot.boilerplate.web.controller;

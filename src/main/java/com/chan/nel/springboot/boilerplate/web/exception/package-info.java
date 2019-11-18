@@ -1,1 +1,1 @@
-package com.backend.boilerplate.web.exception;
+package com.chan.nel.springboot.boilerplate.web.exception;

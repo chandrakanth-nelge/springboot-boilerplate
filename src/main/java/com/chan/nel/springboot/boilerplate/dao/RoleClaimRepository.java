@@ -1,14 +1,16 @@
-package com.backend.boilerplate.dao;
+package com.chan.nel.springboot.boilerplate.dao;
 
-import com.backend.boilerplate.entity.RoleClaim;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.chan.nel.springboot.boilerplate.entity.RoleClaim;
+
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @Repository
 public interface RoleClaimRepository extends JpaRepository<RoleClaim, RoleClaim.RoleClaimId> {
+	
 }

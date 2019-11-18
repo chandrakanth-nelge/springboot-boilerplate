@@ -1,25 +1,25 @@
-package com.backend.boilerplate.entity;
-
-import org.hibernate.HibernateException;
-import org.hibernate.engine.spi.SharedSessionContractImplementor;
+package com.chan.nel.springboot.boilerplate.entity;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public class PostgreSQLEnumType extends org.hibernate.type.EnumType {
 
-    public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session)
-        throws HibernateException, SQLException {
-        if (value == null) {
-            st.setNull(index, Types.OTHER);
-        } else {
-            st.setObject(index, value.toString(), Types.OTHER);
-        }
-    }
+	public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session)
+			throws HibernateException, SQLException {
+		if (value == null) {
+			st.setNull(index, Types.OTHER);
+		} else {
+			st.setObject(index, value.toString(), Types.OTHER);
+		}
+	}
 }

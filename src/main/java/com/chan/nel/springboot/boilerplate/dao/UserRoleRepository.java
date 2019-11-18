@@ -1,11 +1,12 @@
 package com.chan.nel.springboot.boilerplate.dao;
 
-import com.backend.boilerplate.entity.Role;
-import com.backend.boilerplate.entity.UserRole;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.chan.nel.springboot.boilerplate.entity.Role;
+import com.chan.nel.springboot.boilerplate.entity.UserRole;
 
 /**
  * @author Chandrakanth Nelge
@@ -14,6 +15,5 @@ import java.util.List;
  */
 @Repository
 public interface UserRoleRepository extends JpaRepository<UserRole, UserRole.UserRoleId> {
-
-    List<UserRole> findByRole(Role role);
+	List<UserRole> findByRole(Role role);
 }

@@ -1,9 +1,10 @@
-package com.backend.boilerplate.dto.validator;
+package com.chan.nel.springboot.boilerplate.dto.validator;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public interface Extended {
+
 }

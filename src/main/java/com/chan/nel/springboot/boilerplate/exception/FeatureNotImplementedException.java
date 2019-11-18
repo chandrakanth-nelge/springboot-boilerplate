@@ -1,30 +1,30 @@
-package com.backend.boilerplate.exception;
+package com.chan.nel.springboot.boilerplate.exception;
 
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+import lombok.Getter;
+
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public class FeatureNotImplementedException extends RuntimeException {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private static final String ERROR = "Feature not yet implemented";
+	private static final String ERROR = "Feature not yet implemented";
 
-    /**
-     * see {@link ErrorDetails}
-     */
-    @Getter
-    private final ErrorDetails error;
+	/**
+	 * see {@link ErrorDetails}
+	 */
+	@Getter
+	private final ErrorDetails error;
 
-
-    /**
-     * @see RuntimeException#RuntimeException()
-     */
-    public FeatureNotImplementedException() {
-        this.error = new ErrorDetails(String.valueOf(HttpStatus.NOT_IMPLEMENTED.value()), ERROR);
-    }
+	/**
+	 * @see RuntimeException#RuntimeException()
+	 */
+	public FeatureNotImplementedException() {
+		this.error = new ErrorDetails(String.valueOf(HttpStatus.NOT_IMPLEMENTED.value()), ERROR);
+	}
 
 }

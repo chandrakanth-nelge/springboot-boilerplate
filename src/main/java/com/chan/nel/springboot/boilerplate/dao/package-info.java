@@ -1,1 +1,1 @@
-package com.backend.boilerplate.dao;
+package com.chan.nel.springboot.boilerplate.dao;

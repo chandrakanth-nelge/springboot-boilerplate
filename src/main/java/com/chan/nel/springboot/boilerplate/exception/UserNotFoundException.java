@@ -1,16 +1,16 @@
-package com.backend.boilerplate.exception;
+package com.chan.nel.springboot.boilerplate.exception;
 
-import com.backend.boilerplate.util.ErrorGenerator;
+import com.chan.nel.springboot.boilerplate.util.ErrorGenerator;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public class UserNotFoundException extends UserManagementException {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public UserNotFoundException() {
-        super(ErrorGenerator.generateForCode("1004"));
-    }
+	public UserNotFoundException() {
+		super(ErrorGenerator.generateForCode("1004"));
+	}
 }

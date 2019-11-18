@@ -1,4 +1,4 @@
-package com.backend.boilerplate.exception;
+package com.chan.nel.springboot.boilerplate.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -12,10 +12,10 @@ import lombok.Setter;
 /**
  * Wrapper of error details that has to be sent in Api Response
  *
- * @author sarvesh
- * @version 0.0.1
- * @see com.backend.boilerplate.dto.Response
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @see com.chan.nel.springboot.boilerplate.dto.Response
+ * @since 1.0
  */
 @JsonInclude(value = Include.NON_EMPTY, content = Include.NON_NULL)
 @JsonPropertyOrder({"code", "message", "target"})
@@ -62,7 +62,6 @@ public class ErrorDetails {
     @Override
     public String toString() {
         String error = String.format("%s-%s", code, message);
-        //if(null != target && !target.isBlank()) { // java 11 >
         if (null != target && target.trim().length() > 0) {
             error = String.format("%s target:%s", error, target);
         }

@@ -1,17 +1,17 @@
-package com.backend.boilerplate.exception;
+package com.chan.nel.springboot.boilerplate.exception;
 
-import com.backend.boilerplate.util.ErrorGenerator;
+import com.chan.nel.springboot.boilerplate.util.ErrorGenerator;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 public class ClaimNotFoundException extends UserManagementException {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public ClaimNotFoundException() {
-        super(ErrorGenerator.generateForCode("1015"));
-    }
+	public ClaimNotFoundException() {
+		super(ErrorGenerator.generateForCode("1015"));
+	}
 
 }
