@@ -1,4 +1,4 @@
-package com.backend.boilerplate.dto;
+package com.chan.nel.springboot.boilerplate.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

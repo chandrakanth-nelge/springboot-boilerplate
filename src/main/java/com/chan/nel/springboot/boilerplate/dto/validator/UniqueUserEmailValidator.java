@@ -1,4 +1,4 @@
-package com.backend.boilerplate.dto.validator;
+package com.chan.nel.springboot.boilerplate.dto.validator;
 
 import com.backend.boilerplate.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

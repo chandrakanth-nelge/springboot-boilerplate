@@ -1,18 +1,17 @@
-package com.backend.boilerplate.constant;
+package com.chan.nel.springboot.boilerplate.constant;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @RequiredArgsConstructor
 public enum Role {
-    DEFAULT("DEFAULT"),
-    SYSTEM_ADMIN("System Admin");
+	DEFAULT("DEFAULT"), SYSTEM_ADMIN("System Admin");
 
-    @Getter
-    private final String name;
+	@Getter
+	private final String name;
 }

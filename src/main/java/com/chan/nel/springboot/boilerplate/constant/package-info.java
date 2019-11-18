@@ -1,1 +1,1 @@
-package com.backend.boilerplate.constant;
+package com.chan.nel.springboot.boilerplate.constant;

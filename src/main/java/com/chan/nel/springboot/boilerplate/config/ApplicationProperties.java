@@ -1,16 +1,17 @@
-package com.backend.boilerplate.config;
+package com.chan.nel.springboot.boilerplate.config;
 
-import lombok.Data;
+import java.util.Set;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Set;
+import lombok.Data;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @Configuration
 @EnableConfigurationProperties
@@ -18,17 +19,17 @@ import java.util.Set;
 @Data
 public class ApplicationProperties {
 
-    private Sort sort = new Sort();
+	private Sort sort = new Sort();
 
-    @Data
-    public static class Sort {
-        private User user = new User();
+	@Data
+	public static class Sort {
+		private User user = new User();
 
-        @Data
-        public static class User {
-            private String defaultParam;
+		@Data
+		public static class User {
+			private String defaultParam;
 
-            private Set<String> params;
-        }
-    }
+			private Set<String> params;
+		}
+	}
 }

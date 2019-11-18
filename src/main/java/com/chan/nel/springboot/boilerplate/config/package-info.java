@@ -1,1 +1,1 @@
-package com.backend.boilerplate.config;
+package com.chan.nel.springboot.boilerplate.config;

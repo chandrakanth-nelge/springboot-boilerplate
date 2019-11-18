@@ -1,4 +1,4 @@
-package com.backend.boilerplate.dto;
+package com.chan.nel.springboot.boilerplate.dto;
 
 import com.backend.boilerplate.constant.Status;
 import com.backend.boilerplate.exception.ErrorDetails;

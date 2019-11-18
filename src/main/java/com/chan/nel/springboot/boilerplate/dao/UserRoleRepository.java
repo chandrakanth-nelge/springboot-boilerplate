@@ -1,4 +1,4 @@
-package com.backend.boilerplate.dao;
+package com.chan.nel.springboot.boilerplate.dao;
 
 import com.backend.boilerplate.entity.Role;
 import com.backend.boilerplate.entity.UserRole;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author sarvesh
- * @version 0.0.1
- * @since 0.0.1
+ * @author Chandrakanth Nelge
+ * @version 1.0
+ * @since 1.0
  */
 @Repository
 public interface UserRoleRepository extends JpaRepository<UserRole, UserRole.UserRoleId> {

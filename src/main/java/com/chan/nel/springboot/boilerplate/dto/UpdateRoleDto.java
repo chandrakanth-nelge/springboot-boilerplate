@@ -1,4 +1,4 @@
-package com.backend.boilerplate.dto;
+package com.chan.nel.springboot.boilerplate.dto;
 
 import com.backend.boilerplate.dto.validator.Extended;
 import com.backend.boilerplate.dto.validator.UniqueResource;

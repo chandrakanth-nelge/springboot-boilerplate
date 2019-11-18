@@ -1,4 +1,4 @@
-package com.backend.boilerplate.dto;
+package com.chan.nel.springboot.boilerplate.dto;
 
 import com.backend.boilerplate.dto.validator.Exist;
 import com.backend.boilerplate.dto.validator.ExistClaimsValidator;
