@@ -59,7 +59,7 @@ public class UserController {
 
 	/**
 	 * @return Response<UserPageDto>
-	 * @since 0.0.1
+	 * @since 1.0
 	 */
 	@ApiOperation(value = "Get a current page of list of Users", produces = "application/json")
 	@ApiResponses(value = {

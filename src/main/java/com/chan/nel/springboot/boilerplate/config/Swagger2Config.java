@@ -43,7 +43,7 @@ public class Swagger2Config {
 		return new ApiInfoBuilder().title("USERMANAGEMENT API")
 				.description("Documentation USERMANAGEMENT API v" + version)
 				.contact(
-						new Contact("Sarvesh Padwal", "https://www.google.com", "sarvesh.padwal@contractors.roche.com"))
+						new Contact("Chandrakanth Nelge", "https://www.google.com", "chandrakanth.nelge@gmail.com"))
 				.license("Apache 2.0").licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html").version(version)
 				.build();
 	}
