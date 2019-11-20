@@ -9,5 +9,5 @@ package com.chan.nel.springboot.boilerplate.constant;
  * @since 1.0
  */
 public enum Status {
-    SUCCESS, FAIL, CLIENT_ERROR;
+	SUCCESS, FAIL, CLIENT_ERROR;
 }

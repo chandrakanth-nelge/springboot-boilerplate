@@ -7,7 +7,7 @@ Configuration:
           Pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1}- %msg%n'
       - name: Masked-Console-Appender
         PatternLayout:
-          Pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1}- %spi%n'
+          Pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1}- %crlf{%spi}%n'
   Loggers:
     logger:
       - name: com.chan.nel.springboot.boilerplate

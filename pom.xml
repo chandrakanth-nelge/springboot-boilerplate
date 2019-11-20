@@ -29,7 +29,7 @@
 		<jacoco.exclude></jacoco.exclude>
 
 		<common-util.version>1.0</common-util.version>
-		<log4j2-masking-plugin.version>1.0</log4j2-masking-plugin.version>
+		<log4j2-converters-plugin.version>1.0</log4j2-converters-plugin.version>
 	</properties>
 
 	<parent>
@@ -46,10 +46,11 @@
 			<artifactId>common-util</artifactId>
 			<version>${common-util.version}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.chan.nel</groupId>
-			<artifactId>log4j2-masking-plugin</artifactId>
-			<version>${log4j2-masking-plugin.version}</version>
+			<artifactId>log4j2-converters-plugin</artifactId>
+			<version>${log4j2-converters-plugin.version}</version>
 		</dependency>
 
 		<!-- excluding default logging framework in spring to support log4j2 -->
@@ -127,11 +128,11 @@
 		</dependency>
 
 		<!-- FLYWAY for database versioning -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
-			<version>${flyway.version}</version><!--$NO-MVN-MAN-VER$ -->
-		</dependency>
+			<version>${flyway.version}</version>--><!--$NO-MVN-MAN-VER$ -->
+		<!--</dependency>-->
 
 		<!-- dependencies for data -->
 		<dependency>
