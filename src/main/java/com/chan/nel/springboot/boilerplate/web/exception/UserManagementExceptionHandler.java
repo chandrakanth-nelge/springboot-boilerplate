@@ -31,30 +31,29 @@ public class UserManagementExceptionHandler extends CommonResponseEntityExceptio
 	@SuppressWarnings({ "rawtypes" })
 	@ExceptionHandler({ DataIntegrityViolationException.class })
 	public final ResponseEntity<Response> handleDataIntegrityViolationException(DataIntegrityViolationException dex,
-			WebRequest request) {
-		Response<Void> errorResponse = new Response<Void>(Status.CLIENT_ERROR, HttpStatus.BAD_REQUEST.value(),
-				ErrorGenerator.generateForCode("1000"));
+																		        WebRequest request) {
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1000");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, HttpStatus.BAD_REQUEST.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
 	}
 
 	@SuppressWarnings({ "rawtypes" })
 	@ExceptionHandler({ ConstraintViolationException.class })
 	public final ResponseEntity<Response> handleConstraintViolationException(ConstraintViolationException ax,
-			WebRequest request) {
+																			 WebRequest request) {
 		log.error("<<ConstraintViolationException>>", ax);
 		ErrorDetails[] arr = ax.getConstraintViolations().stream()
 				.map(error -> ErrorGenerator.generateForCode(error.getMessage())).toArray(ErrorDetails[]::new);
-		Response<Void> errorResponse = new Response<Void>(Status.CLIENT_ERROR, HttpStatus.BAD_REQUEST.value(), arr);
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, HttpStatus.BAD_REQUEST.value(), arr);
 		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
 	}
 
 	@SuppressWarnings({ "rawtypes" })
 	@ExceptionHandler({ UserManagementException.class })
 	public final ResponseEntity<Response> handleUserManagementException(UserManagementException ax,
-			WebRequest request) {
+																		WebRequest request) {
 		log.error("<<Exceptions>>", ax);
-		Response errorResponse = new Response<Void>(Status.FAIL, HttpStatus.INTERNAL_SERVER_ERROR.value(),
-				ax.getError());
+		Response<Void> errorResponse = new Response<>(Status.FAIL, HttpStatus.INTERNAL_SERVER_ERROR.value(),ax.getError());
 		return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
@@ -62,8 +61,8 @@ public class UserManagementExceptionHandler extends CommonResponseEntityExceptio
 	@ExceptionHandler({ Exception.class })
 	public final ResponseEntity<Response> handleExceptions(Exception ex, WebRequest request) {
 		log.error("<<Exceptions>>", ex);
-		Response errorResponse = new Response<Void>(Status.FAIL, HttpStatus.INTERNAL_SERVER_ERROR.value(),
-				ErrorGenerator.generateForCode("1000"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1000");
+		Response<Void> errorResponse = new Response<>(Status.FAIL, HttpStatus.INTERNAL_SERVER_ERROR.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 

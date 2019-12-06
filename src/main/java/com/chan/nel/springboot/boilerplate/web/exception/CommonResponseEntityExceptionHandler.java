@@ -38,123 +38,102 @@ import lombok.extern.log4j.Log4j2;
 @RestControllerAdvice
 public class CommonResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex,
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
+																	  HttpHeaders headers, HttpStatus status, 
+																	  WebRequest request) {
 		log.error("<<HttpRequestMethodNotSupportedException>>", ex);
 		Set<HttpMethod> supportedMethods = ex.getSupportedHttpMethods();
 		if (!CollectionUtils.isEmpty(supportedMethods)) {
 			headers.setAllow(supportedMethods);
 		}
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1001"));
+		
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1001");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers,
-			HttpStatus status, WebRequest request) {
+			                                                    HttpStatus status, WebRequest request) {
 		log.error("<<NoHandlerFoundException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1003"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1003");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex,
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
+																	   HttpHeaders headers, HttpStatus status, 
+																	   WebRequest request) {
 		log.error("<<MissingServletRequestParameterException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1002"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleServletRequestBindingException(ServletRequestBindingException ex,
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
+																	   HttpHeaders headers, HttpStatus status, 
+																	   WebRequest request) {
 		log.error("<<ServletRequestBindingException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1002"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
-	public ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers, HttpStatus status,
-			WebRequest request) {
+	public ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers, 
+													 HttpStatus status, WebRequest request) {
 		log.error("<<TypeMismatchException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1002"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
-	public ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers,
-			HttpStatus status, WebRequest request) {
+	public ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, 
+															   HttpHeaders headers,HttpStatus status, 
+															   WebRequest request) {
 		log.error("<<HttpMessageNotReadableException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1002"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers,
-			HttpStatus status, WebRequest request) {
+															   HttpStatus status, WebRequest request) {
 		log.error("<<MethodArgumentNotValidException>>", ex);
-		Response errorResponse;
+		Response<Void> errorResponse;
 		if (ex.getBindingResult().hasFieldErrors()) {
 			ErrorDetails[] arr = ex.getBindingResult().getFieldErrors().stream()
 					.map(error -> ErrorGenerator.generateForCode(error.getDefaultMessage()))
 					.toArray(ErrorDetails[]::new);
-			errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(), arr);
+			errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(), arr);
 		} else {
-			errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-					ErrorGenerator.generateForCode("1002"));
+			ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+			errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		}
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleMissingServletRequestPart(MissingServletRequestPartException ex,
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
+																  HttpHeaders headers, HttpStatus status, 
+																  WebRequest request) {
 		log.error("<<MissingServletRequestPartException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1002"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public ResponseEntity<Object> handleBindException(BindException ex, HttpHeaders headers, HttpStatus status,
-			WebRequest request) {
+													  WebRequest request) {
 		log.error("<<BindException>>", ex);
-		Response errorResponse = new Response<Void>(Status.CLIENT_ERROR, status.value(),
-				ErrorGenerator.generateForCode("1002"));
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1002");
+		Response<Void> errorResponse = new Response<>(Status.CLIENT_ERROR, status.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, headers, status);
 	}
 }

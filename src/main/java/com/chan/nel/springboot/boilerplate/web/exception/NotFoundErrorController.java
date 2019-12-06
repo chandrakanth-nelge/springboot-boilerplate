@@ -12,6 +12,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.chan.nel.springboot.boilerplate.constant.Status;
 import com.chan.nel.springboot.boilerplate.dto.Response;
+import com.chan.nel.springboot.boilerplate.exception.ErrorDetails;
 import com.chan.nel.springboot.boilerplate.util.ErrorGenerator;
 
 /**
@@ -32,9 +33,9 @@ public class NotFoundErrorController implements ErrorController {
 	}
 
 	@GetMapping
-	public ResponseEntity<Response> error(WebRequest request) {
-		Response errorResponse = new Response<Void>(Status.FAIL, HttpStatus.NOT_FOUND.value(),
-				ErrorGenerator.generateForCode("1003"));
+	public ResponseEntity<Response<Void>> error(WebRequest request) {
+		ErrorDetails errorDetails = ErrorGenerator.generateForCode("1003");
+		Response<Void> errorResponse = new Response<>(Status.FAIL, HttpStatus.NOT_FOUND.value(),errorDetails);
 		return new ResponseEntity<>(errorResponse, new HttpHeaders(), HttpStatus.NOT_FOUND);
 	}
 

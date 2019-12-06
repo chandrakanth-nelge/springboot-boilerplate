@@ -16,8 +16,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @since 1.0
  */
-//TODO
-//@Deprecated(forRemoval = true)
+@Deprecated()
 @Component
 public class CorsFilter implements Filter {
 	@Override
@@ -27,8 +26,7 @@ public class CorsFilter implements Filter {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
 		response.setHeader("Access-Control-Max-Age", "3600");
-		response.setHeader("Access-Control-Allow-Headers",
-				"Content-Type, Authorization, Content-Length, X-Requested-With");
+		response.setHeader("Access-Control-Allow-Headers","Content-Type, Authorization, Content-Length, X-Requested-With");
 		chain.doFilter(req, res);
 	}
 }
