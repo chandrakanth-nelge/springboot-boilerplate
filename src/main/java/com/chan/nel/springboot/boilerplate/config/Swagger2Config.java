@@ -34,17 +34,23 @@ public class Swagger2Config {
 	}
 
 	private Docket buildDocket(String version) {
-		return new Docket(DocumentationType.SWAGGER_2).groupName(String.format(GROUP_NAME, version)).select()
-				.apis(RequestHandlerSelectors.withClassAnnotation(Api.class)).paths(PathSelectors.any()).build()
+		return new Docket(DocumentationType.SWAGGER_2)
+				.groupName(String.format(GROUP_NAME, version))
+				.select()
+				.apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+				.paths(PathSelectors.any())
+				.build()
 				.apiInfo(apiEndPointsInfo(version));
 	}
 
 	private ApiInfo apiEndPointsInfo(String version) {
-		return new ApiInfoBuilder().title("USERMANAGEMENT API")
+		return new ApiInfoBuilder()
+				.title("USERMANAGEMENT API")
 				.description("Documentation USERMANAGEMENT API v" + version)
-				.contact(
-						new Contact("Chandrakanth Nelge", "https://www.google.com", "chandrakanth.nelge@gmail.com"))
-				.license("Apache 2.0").licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html").version(version)
+				.contact(new Contact("Chandrakanth Nelge", "https://www.google.com", "chandrakanth.nelge@gmail.com"))
+				.license("Apache 2.0")
+				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+				.version(version)
 				.build();
 	}
 }
