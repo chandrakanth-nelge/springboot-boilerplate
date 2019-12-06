@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.InitBinder;
  */
 @ControllerAdvice
 public class GlobalInitBinderHandler {
+	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		StringTrimmerEditor stringTrimmer = new StringTrimmerEditor(true);
