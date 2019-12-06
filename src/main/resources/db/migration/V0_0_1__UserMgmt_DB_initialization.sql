@@ -33,7 +33,7 @@ CREATE DATABASE IF NOT EXISTS security;
  * id   uuid              name          status    performed_by    ts
  * 1    aasad-asas-asas   bruce         CREATED   10000           2019-10-10 10:10:10
  * ---------------------------------------------------------------------------------
- * Case 2: update user (Update name of sarvesh)
+ * Case 2: update user (Update name of chandra)
  *
  * user_history
  * id   uuid              name          status    performed_by    ts
