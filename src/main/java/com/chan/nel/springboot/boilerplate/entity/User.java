@@ -40,7 +40,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "app_user")
-@TypeDef(name = "Status", typeClass = PostgreSQLEnumType.class)
+@TypeDef(name = "Status", typeClass = MySQLEnumType.class)
 @Getter
 @Setter
 @EqualsAndHashCode(of = { "id" })
@@ -50,7 +50,6 @@ import lombok.Setter;
 public class User {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", columnDefinition = "SERIAL")
 	private Long id;
 
 	@Column(name = "uuid", nullable = false, unique = true)

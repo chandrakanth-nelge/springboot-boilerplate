@@ -12,7 +12,7 @@ import org.hibernate.engine.spi.SharedSessionContractImplementor;
  * @version 1.0
  * @since 1.0
  */
-public class PostgreSQLEnumType extends org.hibernate.type.EnumType {
+public class MySQLEnumType extends org.hibernate.type.EnumType {
 
 	public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session)
 			throws HibernateException, SQLException {

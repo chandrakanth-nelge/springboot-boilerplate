@@ -34,7 +34,7 @@ import lombok.ToString;
  */
 @Entity
 @Table(name = "role_history")
-@TypeDef(name = "Status", typeClass = PostgreSQLEnumType.class)
+@TypeDef(name = "Status", typeClass = MySQLEnumType.class)
 @Getter
 @Setter
 @EqualsAndHashCode(of = { "id" })

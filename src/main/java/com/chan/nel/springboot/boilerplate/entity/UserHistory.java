@@ -33,7 +33,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "app_user_history")
-@TypeDef(name = "Status", typeClass = PostgreSQLEnumType.class)
+@TypeDef(name = "Status", typeClass = MySQLEnumType.class)
 @Getter
 @Setter
 @EqualsAndHashCode(of = { "id" })
